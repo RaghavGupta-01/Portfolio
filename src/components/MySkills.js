@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaReact, FaNodeJs, FaDatabase, FaUsers, FaComment, FaGitAlt, FaDocker, FaAws, FaGoogle, FaBrain } from 'react-icons/fa';
+import { FaCode, FaReact, FaNodeJs, FaUsers, FaComment, FaGitAlt, FaDocker, FaAws, FaGoogle, FaBrain } from 'react-icons/fa';
 import { SiExpress, SiMongodb, SiPostgresql, SiSupabase, SiRazorpay, SiCplusplus, SiC } from 'react-icons/si';
 
 const MySkills = () => {
@@ -30,7 +30,7 @@ const MySkills = () => {
         { name: 'AI Fundamentals', icon: <FaBrain className="text-5xl" /> },
     ];
 
-    const duplicateSkills = (skills) => [...skills, ...skills, ...skills, , ...skills, ...skills];
+    const duplicateSkills = (skills) => [...skills, ...skills, ...skills, ...skills, ...skills];
 
     return (
         <section id="skills" className="flex flex-col px-4 md:px-16 lg:px-20 py-12 min-h-screen bg-gradient-to-b from-gray-900 to-black">

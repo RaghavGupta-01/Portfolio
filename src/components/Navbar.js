@@ -17,7 +17,7 @@ const Navbar = () => {
     }, [])
 
     const handleClick = (event, sectionId) => {
-        event.preventDefault() 
+        event.preventDefault()
         setIsMenuOpen(false)
 
         const section = document.getElementById(sectionId)
@@ -51,7 +51,7 @@ const Navbar = () => {
                     <div className="flex space-x-6 items-center">
                         <a href="#about" onClick={(e) => handleClick(e, 'about')} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">About Me</a>
                         <a href="#skills" onClick={(e) => handleClick(e, 'skills')} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">My Skills</a>
-                        <a href="#projects" onClick={handleClick} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">Projects</a>
+                        <a href="#projects" onClick={(e) => handleClick(e, 'projects')} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">Projects</a>
                         <a href="#links" onClick={handleClick} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">Social Links</a>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
                     <div className="flex flex-col space-y-2">
                         <a href="#about" onClick={(e) => handleClick(e, 'about')} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">About Me</a>
                         <a href="#skills" onClick={(e) => handleClick(e, 'skills')} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">My Skills</a>
-                        <a href="#projects" onClick={handleClick} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">Projects</a>
+                        <a href="#projects" onClick={(e) => handleClick(e, 'projects')} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">Projects</a>
                         <a href="#links" onClick={handleClick} className="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-blue-400 hover:text-white">Social Links</a>
                     </div>
                 </div>
