@@ -1,40 +1,8 @@
 import React from 'react';
-import { FaCode, FaReact, FaNodeJs, FaUsers, FaComment, FaGitAlt, FaDocker, FaAws, FaGoogle, FaBrain } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiPostgresql, SiSupabase, SiRazorpay, SiCplusplus, SiC } from 'react-icons/si';
-
-interface Skill {
-    name: string;
-    icon: React.ReactNode;
-}
+import { FaCode, FaDocker, FaUsers } from 'react-icons/fa';
+import { Skill, technicalSkills, softSkills, toolsFrameworks } from '../data';
 
 const MySkills: React.FC = () => {
-    const technicalSkills: Skill[] = [
-        { name: 'C', icon: <SiC className="text-5xl" /> },
-        { name: 'C++', icon: <SiCplusplus className="text-5xl" /> },
-        { name: 'OOPS', icon: <FaCode className="text-5xl" /> },
-        { name: 'React.js', icon: <FaReact className="text-5xl" /> },
-        { name: 'Node.js', icon: <FaNodeJs className="text-5xl" /> },
-        { name: 'Express.js', icon: <SiExpress className="text-5xl" /> },
-        { name: 'MongoDB', icon: <SiMongodb className="text-5xl" /> },
-        { name: 'PostgreSQL', icon: <SiPostgresql className="text-5xl" /> },
-    ];
-
-    const softSkills: Skill[] = [
-        { name: 'Communication', icon: <FaComment className="text-3xl" /> },
-        { name: 'Teamwork', icon: <FaUsers className="text-3xl" /> },
-    ];
-
-    const toolsFrameworks: Skill[] = [
-        { name: 'Git', icon: <FaGitAlt className="text-5xl" /> },
-        { name: 'GitHub', icon: <FaGitAlt className="text-5xl" /> },
-        { name: 'AWS', icon: <FaAws className="text-5xl" /> },
-        { name: 'Docker', icon: <FaDocker className="text-5xl" /> },
-        { name: 'Supabase', icon: <SiSupabase className="text-5xl" /> },
-        { name: 'Razorpay', icon: <SiRazorpay className="text-5xl" /> },
-        { name: 'Google OAuth', icon: <FaGoogle className="text-5xl" /> },
-        { name: 'AI Fundamentals', icon: <FaBrain className="text-5xl" /> },
-    ];
-
     const duplicateSkills = (skills: Skill[]): Skill[] => [...skills, ...skills, ...skills, ...skills, ...skills];
 
     return (

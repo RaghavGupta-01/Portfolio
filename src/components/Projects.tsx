@@ -1,44 +1,7 @@
 import React from 'react';
-import ctrlp_img from '../assets/ctrlp_img.png';
-import travelgram_img from '../assets/travelgram_img.png';
-import manas_img from '../assets/manas_img.png';
-
-interface Project {
-    title: string;
-    image: string;
-    description: string;
-    technologies: string[];
-    githubLink: string;
-    demoLink?: string;
-}
+import { projectsData } from '../data';
 
 const Projects: React.FC = () => {
-    const projects: Project[] = [
-        {
-            title: "CTRLP",
-            image: ctrlp_img,
-            description: "A fast and efficient document printing solution for students and businesses to print documents remotely.",
-            technologies: ["React", "Node.js", "PostgreSQL", "Supabase", "Google OAuth", "Razorpay"],
-            githubLink: "https://github.com/RaghavGupta-01/ctrlp-website",
-            demoLink: "https://ctrlp.co.in"
-        },
-        {
-            title: "TravelGram",
-            image: travelgram_img,
-            description: "A social media app to share your travel memories",
-            technologies: ["React", "Redux", "MongoDB", "Node.js", "Express", "MUI"],
-            githubLink: "https://github.com/RaghavGupta-01/TravelGram",
-            demoLink: "https://travelgram-app.vercel.app/posts"
-        },
-        {
-            title: "M.A.N.A.S.",
-            image: manas_img,
-            description: "Short for 'Mental Health Assistance for Navigating Academic Success', a mental health assistance app for college students made under CRISPR Club of IIITN",
-            technologies: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
-            githubLink: "https://github.com/RaghavGupta-01/TravelGram"
-        }
-    ];
-
     return (
         <section id="projects" className="flex flex-col px-4 md:px-16 lg:px-20 py-12 min-h-screen bg-gradient-to-b from-gray-900 to-black">
             <div className="pb-6 lg:pb-20 md:pb-10">
@@ -50,7 +13,7 @@ const Projects: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                {projects.map((project, index) => (
+                {projectsData.map((project, index) => (
                     <div key={index} className="bg-gray-800 rounded-lg p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-blue-400/20">
                         <h3 className="text-[20px] md:text-[24px] font-bold text-white mb-4">{project.title}</h3>
                         <div className="relative mb-4 group">
