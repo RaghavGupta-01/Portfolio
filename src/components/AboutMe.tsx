@@ -1,5 +1,5 @@
 import React from 'react';
-import { aboutMeData } from '../data';
+import { profileData } from '../data';
 
 const AboutMe: React.FC = () => {
     return (
@@ -18,7 +18,7 @@ const AboutMe: React.FC = () => {
                 <div className="relative">
                     <div className="absolute inset-0 bg-blue-400 rounded-lg transform rotate-3"></div>
                     <img
-                        src={aboutMeData.profileImage}
+                        src={profileData.profileImage}
                         alt="Profile"
                         className="relative w-64 sm:w-80 h-auto rounded-lg border-2 border-gray-700 shadow-lg transform -rotate-2 transition-transform duration-300 hover:rotate-0"
                     />
@@ -29,25 +29,25 @@ const AboutMe: React.FC = () => {
                 <div className="flex-1 w-full">
                     <div className="mb-8 md:mb-10">
                         <h2 className="text-[24px] sm:text-[28px] text-center md:text-left md:text-[36px] lg:text-[42px] font-bold text-white underline decoration-white underline-offset-8">
-                            I am <span className="text-blue-400 font-extrabold">{aboutMeData.name}</span>
+                            I am <span className="text-blue-400 font-extrabold">{profileData.name}</span>
                             <span className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[42px] leading-none text-white-400">.</span>
                         </h2>
                     </div>
 
                     <div className="flex-1">
-                        {aboutMeData.bio.map((paragraph, index) => (
+                        {profileData.bio.map((paragraph, index) => (
                             <p key={index} className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] text-gray-300 leading-relaxed font-sans mb-6">
                                 {paragraph}
                             </p>
                         ))}
 
-                        <div className="mt-8 flex flex-wrap gap-3">
-                            {aboutMeData.skillsTags.map((tag, index) => (
+                        {/* <div className="mt-8 flex flex-wrap gap-3">
+                            {profileData.skillsTags.map((tag, index) => (
                                 <div key={index} className="px-4 py-2 bg-gray-800 rounded-full border border-blue-400 shadow-md text-white">
                                     {tag}
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@ const AboutMe: React.FC = () => {
                     <div className="relative">
                         <div className="absolute inset-0 bg-blue-400 rounded-lg transform rotate-3"></div>
                         <img
-                            src={aboutMeData.profileImage}
+                            src={profileData.profileImage}
                             alt="Profile"
                             className="relative w-72 md:w-96 lg:w-120 h-auto rounded-lg border-2 border-gray-700 shadow-xl transform -rotate-2 transition-transform duration-300 hover:rotate-0"
                         />

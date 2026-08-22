@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface AboutMeData {
+export interface ProfileData {
     name: string;
     profileImage: string;
     role: string;
@@ -11,6 +11,11 @@ export interface AboutMeData {
 export interface Skill {
     name: string;
     icon: React.ReactNode;
+}
+
+export interface SkillCategory {
+    title: string;
+    skills: Skill[];
 }
 
 export interface Project {
@@ -26,4 +31,16 @@ export interface SocialLink {
     name: string;
     icon: React.ReactNode;
     url: string;
+}
+
+export interface Role {
+    title: string;
+    date: string;
+    location: string;
+    points: string[];
+}
+
+export interface Experience {
+    company: string;
+    roles: Role[];
 }
