@@ -2,8 +2,13 @@ import React from 'react';
 import { FaCode, FaReact, FaNodeJs, FaUsers, FaComment, FaGitAlt, FaDocker, FaAws, FaGoogle, FaBrain } from 'react-icons/fa';
 import { SiExpress, SiMongodb, SiPostgresql, SiSupabase, SiRazorpay, SiCplusplus, SiC } from 'react-icons/si';
 
-const MySkills = () => {
-    const technicalSkills = [
+interface Skill {
+    name: string;
+    icon: React.ReactNode;
+}
+
+const MySkills: React.FC = () => {
+    const technicalSkills: Skill[] = [
         { name: 'C', icon: <SiC className="text-5xl" /> },
         { name: 'C++', icon: <SiCplusplus className="text-5xl" /> },
         { name: 'OOPS', icon: <FaCode className="text-5xl" /> },
@@ -14,12 +19,12 @@ const MySkills = () => {
         { name: 'PostgreSQL', icon: <SiPostgresql className="text-5xl" /> },
     ];
 
-    const softSkills = [
+    const softSkills: Skill[] = [
         { name: 'Communication', icon: <FaComment className="text-3xl" /> },
         { name: 'Teamwork', icon: <FaUsers className="text-3xl" /> },
     ];
 
-    const toolsFrameworks = [
+    const toolsFrameworks: Skill[] = [
         { name: 'Git', icon: <FaGitAlt className="text-5xl" /> },
         { name: 'GitHub', icon: <FaGitAlt className="text-5xl" /> },
         { name: 'AWS', icon: <FaAws className="text-5xl" /> },
@@ -30,7 +35,7 @@ const MySkills = () => {
         { name: 'AI Fundamentals', icon: <FaBrain className="text-5xl" /> },
     ];
 
-    const duplicateSkills = (skills) => [...skills, ...skills, ...skills, ...skills, ...skills];
+    const duplicateSkills = (skills: Skill[]): Skill[] => [...skills, ...skills, ...skills, ...skills, ...skills];
 
     return (
         <section id="skills" className="flex flex-col px-4 md:px-16 lg:px-20 py-12 min-h-screen bg-gradient-to-b from-gray-900 to-black">
@@ -99,40 +104,40 @@ const MySkills = () => {
                 </div>
             </div>
 
-            {/* CSS for animations */
-                <style >{`
-                                @keyframes scroll {
-                                    0% { transform: translateX(0); }
-                                    100% { transform: translateX(-50%); }
-                                }
+            {/* CSS for animations */}
+            <style>{`
+                @keyframes scroll {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
 
-                                @keyframes scrollReverse {
-                                    0% { transform: translateX(-50%); }
-                                    100% { transform: translateX(0); }
-                                }
+                @keyframes scrollReverse {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                }
 
-                                .animate-scroll {
-                                    animation: scroll 30s linear infinite;
-                                }
+                .animate-scroll {
+                    animation: scroll 30s linear infinite;
+                }
 
-                                .animate-scroll-reverse {
-                                    animation: scrollReverse 30s linear infinite;
-                                }
-                                    @keyframes scroll-768 {
-                                    0% { transform: translateX(0); }
-                                    100% { transform: translateX(-420%); }
-                                }
-        
-                                     @media (max-width: 768px) {
-                                .animate-scroll {
-                                    animation: scroll-768 10s linear infinite;
-                                }
-        
-                                .animate-scroll-reverse {
-                                    animation: scrollReverse 10s linear infinite;
-                                }
-                                }
-                            `}</style>}
+                .animate-scroll-reverse {
+                    animation: scrollReverse 30s linear infinite;
+                }
+                @keyframes scroll-768 {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-420%); }
+                }
+
+                @media (max-width: 768px) {
+                    .animate-scroll {
+                        animation: scroll-768 10s linear infinite;
+                    }
+
+                    .animate-scroll-reverse {
+                        animation: scrollReverse 10s linear infinite;
+                    }
+                }
+            `}</style>
         </section>
     );
 };

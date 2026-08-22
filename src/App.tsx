@@ -1,10 +1,12 @@
+import React from 'react';
 import './App.css';
 import AboutMe from './components/AboutMe';
 import MySkills from './components/MySkills';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 import SocialLinks from './components/SocialLinks';
-function App() {
+
+const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />

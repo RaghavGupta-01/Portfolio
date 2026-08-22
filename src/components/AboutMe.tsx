@@ -1,7 +1,7 @@
 import React from 'react';
 import profile_image from '../assets/profile_image.png';
 
-const AboutMe = () => {
+const AboutMe: React.FC = () => {
     return (
         <section id='about' className="flex flex-col px-4 md:px-16 lg:px-20 py-12 min-h-screen bg-gradient-to-b from-gray-900 to-black">
             <div className="pb-6 lg:pb-20 md:pb-10">
@@ -32,9 +32,6 @@ const AboutMe = () => {
                             I am <span className="text-blue-400 font-extrabold">Raghav Gupta</span>
                             <span className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[42px] leading-none text-white-400">.</span>
                         </h2>
-                        {/* <p className="text-left text-gray-400 text-[16px] sm:text-[18px] md:text-[20px] mt-2">
-                              Turning ideas into elegant code
-                            </p> */}
                     </div>
 
                     <div className="flex-1">
@@ -74,14 +71,6 @@ const AboutMe = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="mt-12 pt-6 border-t border-gray-800">
-                <div className="flex items-center px-6 py-3 bg-gray-800 rounded-full inline-block">
-                    <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                    <span className="text-white">Currently open to opportunities</span>
-                </div>
-            </div> */}
-
         </section>
     );
 };

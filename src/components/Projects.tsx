@@ -1,11 +1,19 @@
-import React from 'react'
-import ctrlp_img from '../assets/ctrlp_img.png'
-import travelgram_img from '../assets/travelgram_img.png'
-import manas_img from '../assets/manas_img.png'
-// import shechange_img from '../assets/shechange_img.png'
+import React from 'react';
+import ctrlp_img from '../assets/ctrlp_img.png';
+import travelgram_img from '../assets/travelgram_img.png';
+import manas_img from '../assets/manas_img.png';
 
-const Projects = () => {
-    const projects = [
+interface Project {
+    title: string;
+    image: string;
+    description: string;
+    technologies: string[];
+    githubLink: string;
+    demoLink?: string;
+}
+
+const Projects: React.FC = () => {
+    const projects: Project[] = [
         {
             title: "CTRLP",
             image: ctrlp_img,
@@ -18,7 +26,7 @@ const Projects = () => {
             title: "TravelGram",
             image: travelgram_img,
             description: "A social media app to share your travel memories",
-            technologies: ["React", "Redux", "MongoDB", "Node.js", "Express", "MUI",],
+            technologies: ["React", "Redux", "MongoDB", "Node.js", "Express", "MUI"],
             githubLink: "https://github.com/RaghavGupta-01/TravelGram",
             demoLink: "https://travelgram-app.vercel.app/posts"
         },
@@ -27,11 +35,8 @@ const Projects = () => {
             image: manas_img,
             description: "Short for 'Mental Health Assistance for Navigating Academic Success', a mental health assistance app for college students made under CRISPR Club of IIITN",
             technologies: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
-            githubLink: "https://github.com/RaghavGupta-01/TravelGram",
-            // demoLink: "https://appname.vercel.app"
-        },
-
-        //  More projects...
+            githubLink: "https://github.com/RaghavGupta-01/TravelGram"
+        }
     ];
 
     return (
@@ -73,16 +78,18 @@ const Projects = () => {
                                 className="px-4 py-2 bg-blue-400 text-black rounded-full font-semibold hover:bg-blue-500 transition-colors">
                                 GitHub
                             </a>
-                            <a href={project.demoLink} target="_blank" rel="noopener noreferrer"
-                                className="px-4 py-2 bg-gray-900 text-white rounded-full font-semibold border border-blue-400 hover:bg-gray-700 transition-colors">
-                                Live Demo
-                            </a>
+                            {project.demoLink && (
+                                <a href={project.demoLink} target="_blank" rel="noopener noreferrer"
+                                    className="px-4 py-2 bg-gray-900 text-white rounded-full font-semibold border border-blue-400 hover:bg-gray-700 transition-colors">
+                                    Live Demo
+                                </a>
+                            )}
                         </div>
                     </div>
                 ))}
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;

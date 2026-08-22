@@ -2,8 +2,14 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-const SocialLinks = () => {
-    const socialLinks = [
+interface SocialLink {
+    name: string;
+    icon: React.ReactNode;
+    url: string;
+}
+
+const SocialLinks: React.FC = () => {
+    const socialLinks: SocialLink[] = [
         { name: 'GitHub', icon: <FaGithub className="text-4xl" />, url: 'https://github.com/RaghavGupta-01' },
         { name: 'LinkedIn', icon: <FaLinkedin className="text-4xl" />, url: 'https://www.linkedin.com/in/raghav-gupta-b00899264/' },
         { name: 'Email', icon: <MdEmail className="text-4xl" />, url: 'mailto:raghav010304@gmail.com' }
@@ -42,13 +48,6 @@ const SocialLinks = () => {
                             </a>
                         ))}
                     </div>
-
-                    {/* <div className="mt-10 text-center">
-                        <div className="inline-flex items-center px-6 py-3 bg-gray-800 rounded-full border border-blue-400 shadow-md">
-                            <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                            <span className="text-white">Currently open to opportunities</span>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </section>
