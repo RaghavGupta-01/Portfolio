@@ -1,15 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Global App styles */
 .App {
   text-align: center;
-  background-color: #101d37ee;
-  min-height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  color: white;
 }
-

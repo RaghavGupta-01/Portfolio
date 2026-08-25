@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders about me link in navbar', () => {
+test('renders about link in navbar', () => {
   render(<App />);
-  const aboutMeLinks = screen.getAllByText(/About Me/i);
-  expect(aboutMeLinks.length).toBeGreaterThan(0);
+  const aboutLinks = screen.getAllByText(/About/i);
+  expect(aboutLinks.length).toBeGreaterThan(0);
 });
