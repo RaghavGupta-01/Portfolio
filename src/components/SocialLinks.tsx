@@ -1,20 +1,7 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-
-interface SocialLink {
-    name: string;
-    icon: React.ReactNode;
-    url: string;
-}
+import { socialLinksData } from '../data';
 
 const SocialLinks: React.FC = () => {
-    const socialLinks: SocialLink[] = [
-        { name: 'GitHub', icon: <FaGithub className="text-4xl" />, url: 'https://github.com/RaghavGupta-01' },
-        { name: 'LinkedIn', icon: <FaLinkedin className="text-4xl" />, url: 'https://www.linkedin.com/in/raghav-gupta-b00899264/' },
-        { name: 'Email', icon: <MdEmail className="text-4xl" />, url: 'mailto:raghav010304@gmail.com' }
-    ];
-
     return (
         <section id="social-links" className="flex flex-col px-4 md:px-16 lg:px-20 py-12 bg-gradient-to-b from-gray-900 to-black">
             <div className="text-center pb-6 lg:pb-12 md:pb-10">
@@ -32,7 +19,7 @@ const SocialLinks: React.FC = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                        {socialLinks.map((link, index) => (
+                        {socialLinksData.map((link, index) => (
                             <a
                                 key={index}
                                 href={link.url}
