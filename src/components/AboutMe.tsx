@@ -28,7 +28,7 @@ const AboutMe: React.FC = () => {
     const [typingSpeed, setTypingSpeed] = useState(100);
 
     useEffect(() => {
-        let timer: NodeJS.Timeout;
+        let timer: ReturnType<typeof setTimeout>;
         const currentFullText = roles[currentRoleIdx];
 
         if (isDeleting) {
