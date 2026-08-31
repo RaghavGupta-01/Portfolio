@@ -17,11 +17,11 @@ export const experienceData: Experience[] = [
         ]
     },
     {
-        company: "Circuit House Technologies",
+        company: "Circuit House Technologies (Lumio)",
         roles: [
             {
                 title: "Frontend Developer Intern",
-                date: "Oct 2025 – Mar 2026",
+                date: "Oct 2025 – Apr 2026",
                 location: "Bengaluru, India",
                 points: [
                     "Developed responsive UI components using Astro, React.js, and TypeScript for an OTT content discovery platform, implementing Figma designs with pixel accuracy.",
