@@ -21,6 +21,41 @@ const Linkedin = ({ className }: { className?: string }) => (
 const AboutMe: React.FC = () => {
     const [stars, setStars] = useState<{ id: number; x: number; y: number; size: number; duration: number }[]>([]);
 
+    const roles = ["Software Engineer", "Fullstack Developer", "AI Application Developer"];
+    const [currentRoleIdx, setCurrentRoleIdx] = useState(0);
+    const [displayedText, setDisplayedText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [typingSpeed, setTypingSpeed] = useState(100);
+
+    useEffect(() => {
+        let timer: NodeJS.Timeout;
+        const currentFullText = roles[currentRoleIdx];
+
+        if (isDeleting) {
+            timer = setTimeout(() => {
+                setDisplayedText(prev => prev.substring(0, prev.length - 1));
+                setTypingSpeed(35); 
+            }, typingSpeed);
+        } else {
+            timer = setTimeout(() => {
+                setDisplayedText(prev => currentFullText.substring(0, prev.length + 1));
+                setTypingSpeed(80); 
+            }, typingSpeed);
+        }
+
+        if (!isDeleting && displayedText === currentFullText) {
+            timer = setTimeout(() => {
+                setIsDeleting(true);
+            }, 1800);
+        } else if (isDeleting && displayedText === "") {
+            setIsDeleting(false);
+            setCurrentRoleIdx((prev) => (prev + 1) % roles.length);
+            setTypingSpeed(150);
+        }
+
+        return () => clearTimeout(timer);
+    }, [displayedText, isDeleting, currentRoleIdx, typingSpeed]);
+
     useEffect(() => {
         // Generate coordinates for background stars
         const newStars = Array.from({ length: 70 }, (_, i) => ({
@@ -102,8 +137,9 @@ const AboutMe: React.FC = () => {
                         Hi, I'm <span className="text-foreground">{profileData.name}</span>
                     </h1>
 
-                    <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold text-blue-500 dark:text-blue-400 mb-6 tracking-wide">
-                        {profileData.role}
+                    <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold text-blue-500 dark:text-blue-400 mb-6 tracking-wide min-h-[30px] sm:min-h-[36px] md:min-h-[42px] lg:min-h-[48px] flex items-center justify-center md:justify-start">
+                        {displayedText}
+                        <span className="inline-block w-[3px] h-6 sm:h-7 md:h-8 bg-blue-500 dark:bg-blue-400 ml-1.5 align-middle animate-[pulse_1s_infinite] select-none" />
                     </h2>
 
                     <div className="max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 space-y-4">
@@ -122,8 +158,9 @@ const AboutMe: React.FC = () => {
                             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                         <a
-                            href="/resume.pdf" // Placeholder, adjust accordingly
-                            download
+                            href="https://drive.google.com/file/d/1imOJh3CIwEnj_EWBNPTBMs2dG9G-g4xb/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 px-6 py-3 border bg-background/50 hover:bg-muted text-foreground font-medium rounded-xl transition-all duration-300 hover:-translate-y-0.5"
                         >
                             <Download className="h-4 w-4" />
