@@ -59,7 +59,7 @@ const Experience: React.FC = () => {
                                         <div key={roleIdx} className="relative flex flex-col w-full pl-16 sm:pl-24">
 
                                             {/* Smaller dot for the specific role on the timeline */}
-                                            <div className="absolute left-4 sm:left-10 top-1.5 w-4 h-4 rounded-full border-2 border-muted-foreground/30 bg-background dark:bg-slate-900 z-15 flex items-center justify-center">
+                                            <div className="absolute left-4 sm:left-10 top-1.5 w-4 h-4 rounded-full border-2 border-muted-foreground/30 bg-background dark:bg-slate-900 z-[15] flex items-center justify-center">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400" />
                                             </div>
 
@@ -86,7 +86,7 @@ const Experience: React.FC = () => {
                                                     <ul className="space-y-3.5">
                                                         {role.points.map((pt, ptIdx) => (
                                                             <li key={ptIdx} className="flex gap-2.5 items-start leading-relaxed text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors duration-200">
-                                                                <ArrowRight className="h-4.5 w-4.5 text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0" />
+                                                                <ArrowRight className="h-[18px] w-[18px] text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0" />
                                                                 <span className="text-foreground/90 dark:text-foreground/85 font-sans">
                                                                     {pt}
                                                                 </span>
