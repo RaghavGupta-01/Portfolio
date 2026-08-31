@@ -1,100 +1,107 @@
-import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import React from 'react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { experienceData } from '../data';
+import wobbitech from '../assets/wobitech_logo.jpg';
+import circuithouse from '../assets/circuit_house_tech_logo.jpg';
+import inflekt from '../assets/inflekt_logo.png';
 
 const Experience: React.FC = () => {
-    // Initialize with first company's first role expanded
-    const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>({
-        "0-0": true
-    });
 
-    const toggleRole = (key: string) => {
-        setExpandedRoles(prev => ({
-            ...prev,
-            [key]: !prev[key]
-        }));
+    const getCompanyLogo = (company: string): string | null => {
+        const lower = company.toLowerCase();
+        if (lower.includes('wobbi')) return wobbitech;
+        if (lower.includes('circuit')) return circuithouse;
+        if (lower.includes('inflekt')) return inflekt;
+        return null;
     };
 
     return (
-        <section id="experience" className="flex flex-col px-4 md:px-16 lg:px-20 py-12 min-h-screen bg-gradient-to-b from-gray-900 to-black">
-            <div className="pb-6 lg:pb-20 md:pb-10">
-                <h1 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold font-sans text-white relative inline-block">
-                    My <span className="text-blue-400">Experience</span>
-                    <span className="text-[48px] sm:text-[56px] md:text-[80px] lg:text-[100px] leading-none text-blue-400">.</span>
-                    <div className="absolute -bottom-3 left-0 h-3 w-full bg-white transform -skew-x-12 rounded-sm shadow-lg shadow-white/80"></div>
+        <section id="experience" className="relative flex flex-col px-6 md:px-16 lg:px-24 py-20 border-t bg-background text-foreground transition-colors duration-300 overflow-hidden">
+
+            <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] bg-blue-500/5 dark:bg-blue-400/5 rounded-full blur-[130px] pointer-events-none z-0" />
+            <div className="absolute bottom-1/4 right-1/3 w-[300px] h-[300px] bg-blue-400/5 dark:bg-blue-500/5 rounded-full blur-[130px] pointer-events-none z-0" />
+
+            <div className="pb-16 text-center md:text-left z-10">
+                <h1 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold font-sans text-foreground relative inline-block">
+                    My <span className="text-blue-500 dark:text-blue-400">Experience</span>
+                    <span className="text-[48px] sm:text-[56px] md:text-[80px] lg:text-[100px] leading-none text-blue-500 dark:text-blue-400">.</span>
+                    <div className="absolute -bottom-3 left-0 h-3 w-full bg-blue-500/10 dark:bg-blue-400/10 transform -skew-x-12 rounded-sm shadow-sm"></div>
                 </h1>
             </div>
 
-            <div className="max-w-4xl w-full mx-auto mt-10 relative flex flex-col gap-12">
-                {experienceData.map((exp, compIdx) => (
-                    <div key={compIdx} className="relative flex gap-6 items-start">
-                        {/* Left timeline design */}
-                        <div className="flex flex-col items-center h-full relative">
-                            <div className="w-12 h-12 rounded-full bg-gray-800 border-2 border-blue-400 flex items-center justify-center text-blue-400 font-extrabold text-xl shadow-lg shadow-blue-500/10">
-                                {exp.company[0]}
-                            </div>
-                            {compIdx < experienceData.length - 1 && (
-                                <div className="w-0.5 bg-gradient-to-b from-blue-400/80 to-transparent flex-grow absolute top-12 bottom-[-48px] left-[23px]"></div>
-                            )}
-                        </div>
+            <div className="relative max-w-4xl w-full mx-auto mt-6 z-10">
 
-                        {/* Right details content */}
-                        <div className="flex-1 min-w-0">
-                            <h2 className="text-2xl font-bold text-white mb-4 tracking-wide">
-                                {exp.company}
-                            </h2>
+                <div className="flex flex-col gap-14">
+                    {experienceData.map((exp, compIdx) => {
+                        const logoSrc = getCompanyLogo(exp.company);
 
-                            <div className="flex flex-col gap-4">
-                                {exp.roles.map((role, roleIdx) => {
-                                    const roleKey = `${compIdx}-${roleIdx}`;
-                                    const isExpanded = !!expandedRoles[roleKey];
+                        return (
+                            <div key={compIdx} className="relative flex flex-col w-full">
 
-                                    return (
-                                        <div key={roleIdx} className="w-full">
-                                            {/* Accordion Header */}
-                                            <button
-                                                onClick={() => toggleRole(roleKey)}
-                                                className="w-full text-left bg-gray-800/50 border border-gray-700 hover:border-blue-400/30 rounded-xl p-5 flex justify-between items-center transition-all duration-300 transform active:scale-[0.99] group shadow-md"
-                                            >
-                                                <div className="pr-4">
-                                                    <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                                <div className="flex items-center mb-8 relative">
+                                    <div className="absolute -left-1 sm:left-[20px] w-14 h-14 rounded-full border-2 border-border bg-card text-foreground flex items-center justify-center z-10 shadow-md font-extrabold text-xl sm:text-2xl overflow-hidden">
+                                        {logoSrc ? (
+                                            <img src={logoSrc} alt={exp.company} className="w-full h-full object-cover" />
+                                        ) : (
+                                            exp.company[0]
+                                        )}
+                                    </div>
+
+                                    <div className="pl-16 sm:pl-24">
+                                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-foreground">
+                                            {exp.company}
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-10 relative w-full">
+                                    <div className="absolute left-[23px] sm:left-[47px] top-[14px] bottom-[0px] w-[2px] bg-blue-400 dark:bg-blue-400 pointer-events-none" />
+                                    {exp.roles.map((role, roleIdx) => (
+                                        <div key={roleIdx} className="relative flex flex-col w-full pl-16 sm:pl-24">
+
+                                            {/* Smaller dot for the specific role on the timeline */}
+                                            <div className="absolute left-4 sm:left-10 top-1.5 w-4 h-4 rounded-full border-2 border-muted-foreground/30 bg-background dark:bg-slate-900 z-[15] flex items-center justify-center">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400" />
+                                            </div>
+
+                                            {/* Role details */}
+                                            <div className="flex flex-col w-full">
+                                                {/* Role Title and Dates */}
+                                                <div className="flex flex-col md:flex-row md:items-start justify-between gap-2.5 mb-2">
+                                                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground leading-snug">
                                                         {role.title}
-                                                    </h4>
-                                                    <div className="flex flex-wrap items-center gap-x-3 text-sm text-gray-400 mt-1.5 font-medium">
-                                                        <span>{role.date}</span>
-                                                        <span className="text-blue-400/60">•</span>
-                                                        <span>{role.location}</span>
-                                                    </div>
+                                                    </h3>
+                                                    <span className="inline-flex items-center text-xs font-semibold px-3 py-1.5 bg-muted/65 border border-border/80 rounded-full text-foreground whitespace-nowrap self-start md:self-auto">
+                                                        {role.date}
+                                                    </span>
                                                 </div>
-                                                <span className="text-blue-400 text-lg p-2 bg-gray-900/60 rounded-full border border-gray-700/60 group-hover:border-blue-400/20 group-hover:bg-blue-400/10 transition-all duration-300">
-                                                    {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
-                                                </span>
-                                            </button>
 
-                                            {/* Accordion Content with animated expand */}
-                                            <div
-                                                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                                                    isExpanded ? 'max-h-[800px] opacity-100 mt-3' : 'max-h-0 opacity-0'
-                                                }`}
-                                            >
-                                                <div className="bg-gray-950/70 border border-gray-800/80 rounded-xl p-5 shadow-inner">
-                                                    <ul className="list-none space-y-4 text-gray-300 text-sm md:text-base">
+                                                {/* Location */}
+                                                <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground/80 mb-4 font-medium">
+                                                    <MapPin className="h-4 w-4 text-muted-foreground/50 flex-shrink-0" />
+                                                    <span>{role.location}</span>
+                                                </div>
+
+                                                {/* Points / Achievements (Clean list without card borders) */}
+                                                <div className="mt-2 pl-1">
+                                                    <ul className="space-y-3.5">
                                                         {role.points.map((pt, ptIdx) => (
-                                                            <li key={ptIdx} className="flex gap-3 items-start leading-relaxed">
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0 shadow shadow-blue-400"></span>
-                                                                <span>{pt}</span>
+                                                            <li key={ptIdx} className="flex gap-2.5 items-start leading-relaxed text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors duration-200">
+                                                                <ArrowRight className="h-[18px] w-[18px] text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0" />
+                                                                <span className="text-foreground/90 dark:text-foreground/85 font-sans">
+                                                                    {pt}
+                                                                </span>
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                    );
-                                })}
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                ))}
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );

@@ -10,7 +10,7 @@ export interface ProfileData {
 
 export interface Skill {
     name: string;
-    icon: React.ReactNode;
+    icon: string;
 }
 
 export interface SkillCategory {

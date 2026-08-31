@@ -1,64 +1,55 @@
-import React from 'react';
-import { 
-    FaReact, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaGoogle, FaBrain,
-    FaHtml5, FaCss3Alt, FaSass, FaGithub, FaJs, FaCreditCard
-} from 'react-icons/fa';
-import { 
-    SiExpress, SiMongodb, SiPostgresql, SiSupabase, SiRazorpay, SiCplusplus, SiC,
-    SiTypescript, SiNextdotjs, SiRedux, SiTailwindcss, SiOpenai, SiGooglecloud
-} from 'react-icons/si';
 import { SkillCategory } from './types';
 
 export const skillCategories: SkillCategory[] = [
     {
         title: "Programming Languages",
         skills: [
-            { name: 'TypeScript', icon: React.createElement(SiTypescript, { className: "text-2xl" }) },
-            { name: 'JavaScript', icon: React.createElement(FaJs, { className: "text-2xl" }) },
-            { name: 'C++', icon: React.createElement(SiCplusplus, { className: "text-2xl" }) },
-            { name: 'C', icon: React.createElement(SiC, { className: "text-2xl" }) },
+            { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+            { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+            { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+            { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' }
         ]
     },
     {
         title: "Frontend & Design",
         skills: [
-            { name: 'React.js', icon: React.createElement(FaReact, { className: "text-2xl" }) },
-            { name: 'Next.js', icon: React.createElement(SiNextdotjs, { className: "text-2xl" }) },
-            { name: 'Redux', icon: React.createElement(SiRedux, { className: "text-2xl" }) },
-            { name: 'HTML5', icon: React.createElement(FaHtml5, { className: "text-2xl" }) },
-            { name: 'CSS3', icon: React.createElement(FaCss3Alt, { className: "text-2xl" }) },
-            { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss, { className: "text-2xl" }) },
-            { name: 'SCSS', icon: React.createElement(FaSass, { className: "text-2xl" }) },
+            { name: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+            { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+            { name: 'Redux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg' },
+            { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+            { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
+            { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+            { name: 'SCSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg' }
         ]
     },
     {
         title: "Backend & Databases",
         skills: [
-            { name: 'Node.js', icon: React.createElement(FaNodeJs, { className: "text-2xl" }) },
-            { name: 'Express.js', icon: React.createElement(SiExpress, { className: "text-2xl" }) },
-            { name: 'MongoDB', icon: React.createElement(SiMongodb, { className: "text-2xl" }) },
-            { name: 'PostgreSQL', icon: React.createElement(SiPostgresql, { className: "text-2xl" }) },
-            { name: 'Supabase', icon: React.createElement(SiSupabase, { className: "text-2xl" }) },
+            { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+            { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/expressdotjs/default.svg' },
+            { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
+            { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+            { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' }
         ]
     },
     {
         title: "APIs & AI Services",
         skills: [
-            { name: 'OpenAI API', icon: React.createElement(SiOpenai, { className: "text-2xl" }) },
-            { name: 'Gemini API', icon: React.createElement(FaBrain, { className: "text-2xl" }) },
-            { name: 'Google Document AI', icon: React.createElement(SiGooglecloud, { className: "text-2xl" }) },
-            { name: 'Google OAuth', icon: React.createElement(FaGoogle, { className: "text-2xl" }) },
-            { name: 'Razorpay', icon: React.createElement(SiRazorpay, { className: "text-2xl" }) },
-            { name: 'CashFree', icon: React.createElement(FaCreditCard, { className: "text-2xl" }) },
+            { name: 'OpenAI API', icon: 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/openai/default.svg' },
+            { name: 'Gemini API', icon: 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/gemini/default.svg' },
+            { name: 'Google Document AI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg' },
+            { name: 'Google OAuth', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg' },
+            { name: 'Razorpay', icon: 'https://cdn.brandfetch.io/idbEhQU-bo/w/163/h/163/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B' },
+            { name: 'CashFree', icon: 'https://cdn.brandfetch.io/idLecjUPYL/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B' }
         ]
     },
     {
         title: "Tools & Cloud Platforms",
         skills: [
-            { name: 'Git', icon: React.createElement(FaGitAlt, { className: "text-2xl" }) },
-            { name: 'GitHub', icon: React.createElement(FaGithub, { className: "text-2xl" }) },
-            { name: 'AWS (S3)', icon: React.createElement(FaAws, { className: "text-2xl" }) },
-            { name: 'Docker', icon: React.createElement(FaDocker, { className: "text-2xl" }) },
+            { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+            { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
+            { name: 'AWS (S3)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' }
         ]
     }
 ];
