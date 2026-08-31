@@ -49,7 +49,6 @@ const Navbar: React.FC = () => {
                     <a href="#skills" onClick={(e) => handleClick(e, 'skills')} className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Skills</a>
                     <a href="#experience" onClick={(e) => handleClick(e, 'experience')} className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Experience</a>
                     <a href="#projects" onClick={(e) => handleClick(e, 'projects')} className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Projects</a>
-                    <a href="#social-links" onClick={(e) => handleClick(e, 'social-links')} className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
                 </div>
 
                 {/* Right side: Theme toggle and mobile menu toggle */}
@@ -88,7 +87,6 @@ const Navbar: React.FC = () => {
                     <a href="#skills" onClick={(e) => handleClick(e, 'skills')} className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">Skills</a>
                     <a href="#experience" onClick={(e) => handleClick(e, 'experience')} className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">Experience</a>
                     <a href="#projects" onClick={(e) => handleClick(e, 'projects')} className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">Projects</a>
-                    <a href="#social-links" onClick={(e) => handleClick(e, 'social-links')} className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">Contact</a>
                 </div>
             )}
         </header>

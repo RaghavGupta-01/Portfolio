@@ -5,7 +5,7 @@ import MySkills from './components/MySkills';
 import Experience from './components/Experience';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
-import SocialLinks from './components/SocialLinks';
+import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 
 const App: React.FC = () => {
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <MySkills />
         <Experience />
         <Projects />
-        <SocialLinks />
+        <Footer />
       </div>
     </ThemeProvider>
   );
