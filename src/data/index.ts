@@ -1,7 +1,6 @@
-export * from './types';
-export * from './profile';
-export * from './skills';
-export * from './projects';
-export * from './socialLinks';
-export * from './experience';
-
+export * from "./experience";
+export * from "./profile";
+export * from "./projects";
+export * from "./skills";
+export * from "./socialLinks";
+export * from "./types";
