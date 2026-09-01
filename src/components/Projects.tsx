@@ -25,13 +25,13 @@ const Projects: React.FC = () => {
 			className="flex flex-col px-4 md:px-16 lg:px-20 py-16 border-t bg-background text-foreground transition-colors duration-300"
 		>
 			<div className="pb-6 lg:pb-12 md:pb-10">
-				<h1 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold font-sans text-foreground relative inline-block">
+				<h2 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold font-sans text-foreground relative inline-block">
 					My <span className="text-blue-500 dark:text-blue-400">Projects</span>
 					<span className="text-[48px] sm:text-[56px] md:text-[80px] lg:text-[100px] leading-none text-blue-500 dark:text-blue-400">
 						.
 					</span>
 					<div className="absolute -bottom-3 left-0 h-3 w-full bg-blue-500/10 dark:bg-blue-400/10 transform -skew-x-12 rounded-sm shadow-md" />
-				</h1>
+				</h2>
 			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
@@ -78,7 +78,7 @@ const Projects: React.FC = () => {
 									href={project.githubLink}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-semibold text-sm transition-colors"
+									className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-sm transition-colors"
 								>
 									<Github className="h-4 w-4" />
 									Code

@@ -23,14 +23,14 @@ const Experience: React.FC = () => {
 			<div className="absolute bottom-1/4 right-1/3 w-[300px] h-[300px] bg-blue-400/5 dark:bg-blue-500/5 rounded-full blur-[130px] pointer-events-none z-0" />
 
 			<div className="pb-16 text-center md:text-left z-10">
-				<h1 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold font-sans text-foreground relative inline-block">
+				<h2 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold font-sans text-foreground relative inline-block">
 					My{" "}
 					<span className="text-blue-500 dark:text-blue-400">Experience</span>
 					<span className="text-[48px] sm:text-[56px] md:text-[80px] lg:text-[100px] leading-none text-blue-500 dark:text-blue-400">
 						.
 					</span>
 					<div className="absolute -bottom-3 left-0 h-3 w-full bg-blue-500/10 dark:bg-blue-400/10 transform -skew-x-12 rounded-sm shadow-sm" />
-				</h1>
+				</h2>
 			</div>
 
 			<div className="relative max-w-4xl w-full mx-auto mt-6 z-10">
@@ -54,9 +54,9 @@ const Experience: React.FC = () => {
 									</div>
 
 									<div className="pl-16 sm:pl-24">
-										<h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-foreground">
+										<h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-foreground">
 											{exp.company}
-										</h2>
+										</h3>
 									</div>
 								</div>
 								<div className="flex flex-col gap-10 relative w-full">
@@ -75,9 +75,9 @@ const Experience: React.FC = () => {
 											<div className="flex flex-col w-full">
 												{/* Role Title and Dates */}
 												<div className="flex flex-col md:flex-row md:items-start justify-between gap-2.5 mb-2">
-													<h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground leading-snug">
+													<h4 className="text-lg sm:text-xl font-bold tracking-tight text-foreground leading-snug">
 														{role.title}
-													</h3>
+													</h4>
 													<span className="inline-flex items-center text-xs font-semibold px-3 py-1.5 bg-muted/65 border border-border/80 rounded-full text-foreground whitespace-nowrap self-start md:self-auto">
 														{role.date}
 													</span>

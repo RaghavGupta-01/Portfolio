@@ -186,7 +186,7 @@ const AboutMe: React.FC = () => {
 						<button
 							type="button"
 							onClick={() => scrollToSection("projects")}
-							className="group flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300 hover:-translate-y-0.5"
+							className="group flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium rounded-xl shadow-lg shadow-blue-600/25 transition-all duration-300 hover:-translate-y-0.5"
 						>
 							View My Work
 							<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
