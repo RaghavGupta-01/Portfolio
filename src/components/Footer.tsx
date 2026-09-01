@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 					<p className="text-sm text-muted-foreground font-sans">
 						© {new Date().getFullYear()} Raghav Gupta. All rights reserved.
 					</p>
-					<p className="text-xs text-muted-foreground/60 font-sans">
+					<p className="text-xs text-muted-foreground font-sans">
 						Built with React, TypeScript & Tailwind CSS
 					</p>
 				</div>

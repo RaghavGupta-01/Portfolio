@@ -13,10 +13,12 @@ const App: React.FC = () => {
 		<ThemeProvider>
 			<div className="relative min-h-screen bg-background text-foreground transition-colors duration-300">
 				<Navbar />
-				<AboutMe />
-				<MySkills />
-				<Experience />
-				<Projects />
+				<main id="main-content">
+					<AboutMe />
+					<MySkills />
+					<Experience />
+					<Projects />
+				</main>
 				<Footer />
 			</div>
 		</ThemeProvider>
