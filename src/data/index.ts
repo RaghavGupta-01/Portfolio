@@ -1,3 +1,4 @@
+export * from "./additionalExperience";
 export * from "./experience";
 export * from "./profile";
 export * from "./projects";

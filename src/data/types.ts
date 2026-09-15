@@ -44,3 +44,11 @@ export interface Experience {
 	company: string;
 	roles: Role[];
 }
+
+export interface AdditionalExperienceCategory {
+	id: string;
+	title: string;
+	description?: string;
+	iconName: string;
+	points: string[];
+}

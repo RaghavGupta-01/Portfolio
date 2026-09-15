@@ -2,6 +2,7 @@ import type React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
+import AdditionalExperiencePage from "./components/AdditionalExperiencePage";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import MySkills from "./components/MySkills";
@@ -27,6 +28,10 @@ const App: React.FC = () => {
 						<Navbar />
 						<Routes>
 							<Route path="/" element={<HomePage />} />
+							<Route
+								path="/additional-experience"
+								element={<AdditionalExperiencePage />}
+							/>
 						</Routes>
 					</div>
 					<Footer />
