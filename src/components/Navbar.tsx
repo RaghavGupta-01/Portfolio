@@ -1,6 +1,7 @@
 import { Menu, Moon, Sun, X } from "lucide-react";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { profileData } from "../data";
 
@@ -8,6 +9,8 @@ const Navbar: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 	const { theme, toggleTheme } = useTheme();
 	const menuRef = useRef<HTMLDivElement | null>(null);
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -20,8 +23,25 @@ const Navbar: React.FC = () => {
 		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
+	useEffect(() => {
+		if (location.pathname === "/" && location.state?.scrollTo) {
+			const targetId = location.state.scrollTo;
+			setTimeout(() => {
+				const section = document.getElementById(targetId);
+				if (section) {
+					section.scrollIntoView({ behavior: "smooth", block: "start" });
+				}
+			}, 100);
+		}
+	}, [location]);
+
 	const scrollToSection = (sectionId: string) => {
 		setIsMenuOpen(false);
+
+		if (location.pathname !== "/") {
+			navigate("/", { state: { scrollTo: sectionId } });
+			return;
+		}
 
 		const section = document.getElementById(sectionId);
 		if (section) {

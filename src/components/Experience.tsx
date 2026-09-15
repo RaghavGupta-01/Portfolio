@@ -1,5 +1,6 @@
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import type React from "react";
+import { Link } from "react-router-dom";
 import circuithouse from "../assets/circuit_house_tech_logo.jpg";
 import inflekt from "../assets/inflekt_logo.png";
 import wobbitech from "../assets/wobitech_logo.jpg";
@@ -112,6 +113,18 @@ const Experience: React.FC = () => {
 							</div>
 						);
 					})}
+				</div>
+
+				{/* Additional Technical Experience CTA Button */}
+				<div className="mt-16 text-center z-10 flex justify-center">
+					<Link
+						to="/additional-experience"
+						className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-blue-500/40 hover:border-blue-500 bg-blue-500/10 hover:bg-blue-500 text-blue-600 dark:text-blue-400 hover:text-white dark:hover:text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-blue-500/25 group backdrop-blur-sm"
+					>
+						<Sparkles className="h-4 w-4 text-blue-500 group-hover:text-white transition-colors" />
+						<span>Additional Technical Experience</span>
+						<ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+					</Link>
 				</div>
 			</div>
 		</section>
